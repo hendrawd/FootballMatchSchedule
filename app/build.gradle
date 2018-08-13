@@ -1,0 +1,125 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'de.mobilej.unmock'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "ganteng.hendrawd.footballmatchschedule"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    def TsdbDebugApiKey = "\"1\""
+    buildTypes.each {
+        it.buildConfigField "String", "BASE_URL", "\"https://www.thesportsdb.com/\""
+        if (project.hasProperty("TsdbApiKey")) {
+            it.buildConfigField "String", "TSDB_API_KEY", TsdbApiKey
+        } else {
+            it.buildConfigField "String", "TSDB_API_KEY", TsdbDebugApiKey
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
+androidExtensions {
+    experimental = true
+    defaultCacheImplementation = "SPARSE_ARRAY"
+}
+
+unMock {
+    keepStartingWith "android.net.Uri"
+    keepStartingWith "org.json.JSONException"
+    keepStartingWith "android.os.Parcelable"
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+    implementation "com.android.support:design:$supportLibraryVersion"
+    implementation "com.android.support:support-v4:$supportLibraryVersion"
+    implementation "com.android.support:animated-vector-drawable:$supportLibraryVersion"
+    implementation "com.android.support:exifinterface:$supportLibraryVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    // kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+
+    // kotlin coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.23.4"
+
+    // Anko commons
+    implementation "org.jetbrains.anko:anko-common:$ankoVersion"
+
+    // Anko coroutines
+    implementation "org.jetbrains.anko:anko-coroutines:$ankoVersion"
+    implementation "org.jetbrains.anko:anko-sdk25-coroutines:$ankoVersion"
+    implementation "org.jetbrains.anko:anko-appcompat-v7-coroutines:$ankoVersion"
+
+    // Anko Layouts
+    implementation "org.jetbrains.anko:anko-sdk25:$ankoVersion"
+    implementation "org.jetbrains.anko:anko-appcompat-v7:$ankoVersion"
+    implementation "org.jetbrains.anko:anko-recyclerview-v7:$ankoVersion"
+
+    // db
+    implementation "org.jetbrains.anko:anko-sqlite:$ankoVersion"
+
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:$lifecycleVersion"
+    kapt "android.arch.lifecycle:compiler:$lifecycleVersion"
+
+    // Support library depends on this lightweight import
+    implementation "android.arch.lifecycle:runtime:$lifecycleVersion"
+
+    // network image loader
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation("com.github.esafirm.android-image-picker:imagepicker:1.13.1", {
+        exclude group: 'com.github.bumptech.glide', module: 'glide'
+    })
+    implementation 'com.github.medyo:fancybuttons:1.9.0'
+    implementation 'com.roger.catloadinglibrary:catloadinglibrary:1.0.4'
+
+    // http connection
+    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+
+    // json serializer/deserializer
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
+
+    // test frameworks
+    testImplementation 'org.mockito:mockito-core:2.19.0'
+    testImplementation "org.mockito:mockito-inline:2.19.0"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation("com.android.support.test.espresso:espresso-contrib:2.2.2") {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'design'
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }
+}

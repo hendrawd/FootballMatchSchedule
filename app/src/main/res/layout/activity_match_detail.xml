@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Min, 04 Mar 2018"/>
+
+        <TextView
+            android:id="@+id/tvVs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/vs"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate"/>
+
+        <TextView
+            android:id="@+id/tvTeam1Score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@id/tvVs"
+            app:layout_constraintRight_toLeftOf="@id/tvVs"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate"
+            tools:text="2"/>
+
+        <TextView
+            android:id="@+id/tvTeam2Score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintLeft_toRightOf="@id/tvVs"
+            app:layout_constraintStart_toEndOf="@id/tvVs"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate"
+            tools:text="1"/>
+
+        <TextView
+            android:id="@+id/tvTeam1Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate"
+            tools:text="Brighton"/>
+
+        <ImageView
+            android:id="@+id/ivTeam1Logo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTeam1Name"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.3"
+            />
+
+        <TextView
+            android:id="@+id/tvTeam2Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDate"
+            tools:text="Arsenal"/>
+
+        <ImageView
+            android:id="@+id/ivTeam2Logo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTeam2Name"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.3"
+            />
+
+        <android.support.constraint.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="ivTeam1Logo,ivTeam2Logo"
+            />
+
+        <ganteng.hendrawd.footballmatchschedule.view.custom.ContinuedLineView
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:color="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barrier"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_section_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/line"
+            >
+
+            <!--Formation-->
+            <include
+                android:id="@+id/layout_group_formation"
+                layout="@layout/layout_text_views_weight_three"
+                />
+
+            <!--Goal details section-->
+            <include
+                android:id="@+id/layout_group_goal_details"
+                layout="@layout/layout_text_views_weight_three"
+                />
+
+            <!--Lineup goal keeper section-->
+            <include
+                android:id="@+id/layout_group_lineup_goal_keeper"
+                layout="@layout/layout_text_views_weight_three"
+                />
+
+            <!--Lineup defense section-->
+            <include
+                android:id="@+id/layout_group_lineup_defense"
+                layout="@layout/layout_text_views_weight_three"
+                />
+
+            <!--Lineup mid field section-->
+            <include
+                android:id="@+id/layout_group_lineup_mid_field"
+                layout="@layout/layout_text_views_weight_three"
+                />
+
+            <!--Lineup forward section-->
+            <include
+                android:id="@+id/layout_group_lineup_forward"
+                layout="@layout/layout_text_views_weight_three"
+                />
+
+            <!--Lineup substitutes section-->
+            <include
+                android:id="@+id/layout_group_lineup_substitutes"
+                layout="@layout/layout_text_views_weight_three"
+                />
+
+            <!--Red cards section-->
+            <include
+                android:id="@+id/layout_group_red_cards"
+                layout="@layout/layout_text_views_weight_three"
+                />
+
+            <!--Yellow cards section-->
+            <include
+                android:id="@+id/layout_group_yellow_cards"
+                layout="@layout/layout_text_views_weight_three"
+                />
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

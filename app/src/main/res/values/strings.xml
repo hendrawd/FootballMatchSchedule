@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">FootballMatchSchedule</string>
+    <string name="vs">VS</string>
+    <string name="previous_matches">Previous Matches</string>
+    <string name="next_matches">Next Matches</string>
+    <string name="title_goal_details_section">Goal</string>
+    <string name="title_red_cards">Red Cards</string>
+    <string name="title_yellow_cards">Yellow Cards</string>
+    <string name="title_lineup_goal_keeper">Lineup Goal Keeper</string>
+    <string name="title_lineup_defense">Lineup Defense</string>
+    <string name="title_lineup_mid_field">Lineup Mid Field</string>
+    <string name="title_lineup_forward">Lineup Forward</string>
+    <string name="title_lineup_substitutes">Lineup Substitutes</string>
+    <string name="title_formation">Formation</string>
+    <string name="favorites">Favorites</string>
+    <string name="please_wait">Please wait a bit…</string>
+    <string name="select_league_title">Please Select League</string>
+    <string name="search">Search</string>
+    <string name="add_to_calendar">Add to Calendar</string>
+    <string name="teams">Teams</string>
+    <string name="favorite_matches">Favorite Matches</string>
+    <string name="favorite_teams">Favorite Teams</string>
+</resources>

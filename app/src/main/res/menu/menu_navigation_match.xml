@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_prev"
+        android:icon="@drawable/ic_skip_previous"
+        android:title="@string/previous_matches"
+        />
+
+    <item
+        android:id="@+id/menu_next"
+        android:icon="@drawable/ic_skip_next"
+        android:title="@string/next_matches"
+        />
+
+    <item
+        android:id="@+id/menu_favorites"
+        android:icon="@drawable/ic_favorites"
+        android:title="@string/favorites"
+        />
+</menu>
