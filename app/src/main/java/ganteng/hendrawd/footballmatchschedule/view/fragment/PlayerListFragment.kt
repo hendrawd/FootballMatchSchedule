@@ -103,23 +103,19 @@ class PlayerListFragment : Fragment(), Loading {
     }
 
     override fun showLoading() {
-        try {
-            if (catLoadingView == null) {
-                catLoadingView = CatLoadingView()
-                catLoadingView?.isCancelable = false
+        if (catLoadingView == null) {
+            catLoadingView = CatLoadingView()
+            catLoadingView?.isCancelable = false
+        }
+        val activity = context?.getActivity()
+        activity?.let {
+            if (it is AppCompatActivity) {
+                catLoadingView?.show(it.supportFragmentManager, "")
             }
-            val activity = context?.getActivity()
-            activity?.let {
-                if (it is AppCompatActivity) {
-                    catLoadingView?.show(it.supportFragmentManager, "")
-                }
-            }
-        } catch (ignored: IllegalStateException) {
         }
     }
 
     override fun dismissLoading() {
         catLoadingView?.dismissAllowingStateLoss()
-        catLoadingView = null
     }
 }

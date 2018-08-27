@@ -53,12 +53,11 @@ class MatchListActivity : BackButtonActivity(), Loading {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == RC_CHECK_FAVORITE && resultCode == Activity.RESULT_OK) {
             if (navigation.selectedItemId == R.id.menu_favorites) {
                 loadFavoriteMatchesWithProgressDialog()
             }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data)
         }
     }
 
@@ -177,19 +176,15 @@ class MatchListActivity : BackButtonActivity(), Loading {
     }
 
     override fun showLoading() {
-        try {
-            if (catLoadingView == null) {
-                catLoadingView = CatLoadingView()
-                catLoadingView?.isCancelable = false
-            }
-            catLoadingView?.show(supportFragmentManager, "")
-        } catch (ignored: IllegalStateException) {
+        if (catLoadingView == null) {
+            catLoadingView = CatLoadingView()
+            catLoadingView?.isCancelable = false
         }
+        catLoadingView?.show(supportFragmentManager, "")
     }
 
     override fun dismissLoading() {
-        catLoadingView?.dismissAllowingStateLoss()
-        catLoadingView = null
+        catLoadingView?.dismiss()
         swipe_refresh.isRefreshing = false
     }
 }

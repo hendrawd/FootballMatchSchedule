@@ -70,18 +70,14 @@ class MainActivity : AppCompatActivity(), Loading {
     }
 
     override fun showLoading() {
-        try {
-            if (catLoadingView == null) {
-                catLoadingView = CatLoadingView()
-                catLoadingView?.isCancelable = false
-            }
-            catLoadingView?.show(supportFragmentManager, "")
-        } catch (ignored: IllegalStateException) {
+        if (catLoadingView == null) {
+            catLoadingView = CatLoadingView()
+            catLoadingView?.isCancelable = false
         }
+        catLoadingView?.show(supportFragmentManager, "")
     }
 
     override fun dismissLoading() {
-        catLoadingView?.dismissAllowingStateLoss()
-        catLoadingView = null
+        catLoadingView?.dismiss()
     }
 }
