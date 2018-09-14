@@ -30,7 +30,7 @@ object RequestHelper {
                 }
         loggingInterceptor
     }
-    private val OK_HTTP_CLIENT by lazy {
+    val OK_HTTP_CLIENT by lazy {
         OkHttpClient.Builder()
                 .addInterceptor(OK_HTTP_LOGGING_INTERCEPTOR)
                 .build()
