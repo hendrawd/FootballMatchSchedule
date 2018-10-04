@@ -222,6 +222,6 @@
         layout="@layout/layout_toolbar_header_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="ganteng.hendrawd.footballmatchschedule.view.custom.HeaderViewBehavior"
+        app:layout_behavior="ganteng.hendrawd.footballmatchschedule.common.customview.HeaderViewBehavior"
         />
 </android.support.design.widget.CoordinatorLayout>

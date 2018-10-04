@@ -11,13 +11,11 @@ import android.view.View
 import ganteng.hendrawd.footballmatchschedule.R
 
 class HeaderViewBehavior(private val mContext: Context, attrs: AttributeSet) : CoordinatorLayout.Behavior<HeaderView>() {
-
     private var mStartMarginLeft: Int = 0
     private var mEndMarginLeft: Int = 0
     private var mMarginRight: Int = 0
     private var mStartMarginBottom: Int = 0
     private var isHide: Boolean = false
-
 
     private val toolbarHeight: Int
         get() {
@@ -29,22 +27,22 @@ class HeaderViewBehavior(private val mContext: Context, attrs: AttributeSet) : C
             return result
         }
 
-    override fun layoutDependsOn(parent: CoordinatorLayout?, child: HeaderView?, dependency: View?): Boolean {
+    override fun layoutDependsOn(parent: CoordinatorLayout, child: HeaderView, dependency: View): Boolean {
         return dependency is AppBarLayout
     }
 
-    override fun onDependentViewChanged(parent: CoordinatorLayout?, child: HeaderView?, dependency: View?): Boolean {
-        shouldInitProperties(child, dependency)
+    override fun onDependentViewChanged(parent: CoordinatorLayout, child: HeaderView, dependency: View): Boolean {
+        initProperties()
 
         val maxScroll = (dependency as AppBarLayout).totalScrollRange
         val percentage = Math.abs(dependency.y) / maxScroll.toFloat()
 
         var childPosition = (dependency.height + dependency.y
-                - child!!.height.toFloat()
+                - child.height.toFloat()
                 - (toolbarHeight - child.height) * percentage / 2)
 
 
-        childPosition = childPosition - mStartMarginBottom * (1f - percentage)
+        childPosition -= mStartMarginBottom * (1f - percentage)
 
         val lp = child.layoutParams as CoordinatorLayout.LayoutParams
         lp.leftMargin = (percentage * mEndMarginLeft).toInt() + mStartMarginLeft
@@ -65,8 +63,7 @@ class HeaderViewBehavior(private val mContext: Context, attrs: AttributeSet) : C
         return true
     }
 
-    private fun shouldInitProperties(child: HeaderView?, dependency: View?) {
-
+    private fun initProperties() {
         if (mStartMarginLeft == 0)
             mStartMarginLeft = mContext.resources.getDimensionPixelOffset(R.dimen.header_view_start_margin_left)
 
@@ -80,5 +77,4 @@ class HeaderViewBehavior(private val mContext: Context, attrs: AttributeSet) : C
             mMarginRight = mContext.resources.getDimensionPixelOffset(R.dimen.header_view_end_margin_right)
 
     }
-
 }

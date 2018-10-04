@@ -1,6 +1,7 @@
 package ganteng.hendrawd.footballmatchschedule.common.customview
 
 import android.content.Context
+import android.content.res.TypedArray
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
@@ -16,58 +17,38 @@ import ganteng.hendrawd.footballmatchschedule.R
  * @author hendrawd on 11/4/15
  */
 class ContinuedLineView : View {
-
-    private var paint: Paint? = null
-    private var path: Path? = null
+    private val paint = Paint().apply {
+        isAntiAlias = true
+        style = Paint.Style.STROKE
+        strokeJoin = Paint.Join.ROUND
+        strokeCap = Paint.Cap.ROUND
+    }
+    private val path = Path()
     private var lineColor = Color.BLACK
 
-    constructor(context: Context) : super(context) {
-        init(context)
-    }
-
-    constructor(context: Context, `as`: AttributeSet) : super(context, `as`) {
-
-        val a = context.obtainStyledAttributes(`as`, R.styleable.ContinuedLineView)
-
-        val color = a.getString(R.styleable.ContinuedLineView_android_color)
-        lineColor = Color.parseColor(color)
-
-        a.recycle()
-
-        init(context)
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
+        obtainColor(context.obtainStyledAttributes(attrs, R.styleable.ContinuedLineView))
     }
 
     constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle) {
-
-        val a = context.obtainStyledAttributes(attrs, R.styleable.ContinuedLineView, defStyle, 0)
-
-        val color = a.getString(R.styleable.ContinuedLineView_android_color)
-        lineColor = Color.parseColor(color)
-
-        a.recycle()
-
-        init(context)
+        obtainColor(context.obtainStyledAttributes(attrs, R.styleable.ContinuedLineView, defStyle, 0))
     }
 
-    private fun init(context: Context) {
-        paint = Paint()
-        paint!!.color = lineColor
-        paint!!.isAntiAlias = true
-        paint!!.style = Paint.Style.STROKE
-        paint!!.strokeJoin = Paint.Join.ROUND
-        paint!!.strokeCap = Paint.Cap.ROUND
-        path = Path()
-    }
-
-    override fun draw(canvas: Canvas) {
-        super.draw(canvas)
+    private fun obtainColor(typedArray: TypedArray) {
+        typedArray.apply {
+            paint.color = getColor(R.styleable.ContinuedLineView_android_color, lineColor)
+            recycle()
+        }
     }
 
     override fun onDraw(canvas: Canvas) {
-        paint!!.strokeWidth = height.toFloat()
-        path!!.reset()
-        path!!.moveTo(height.toFloat(), (height / 2).toFloat())
-        path!!.lineTo((width - height).toFloat(), (height / 2).toFloat())
-        canvas.drawPath(path!!, paint!!)
+        paint.strokeWidth = height.toFloat()
+        path.apply {
+            reset()
+            val halfHeight = (height / 2).toFloat()
+            moveTo(height.toFloat(), halfHeight)
+            lineTo((width - height).toFloat(), halfHeight)
+            canvas.drawPath(this, paint)
+        }
     }
 }

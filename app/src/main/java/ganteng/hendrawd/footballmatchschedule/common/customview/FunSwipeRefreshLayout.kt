@@ -10,15 +10,15 @@ import android.util.AttributeSet
  * refer to http://stackoverflow.com/questions/22959118/android-support-v4-swiperefreshlayout-empty-view-issue/32357955#32357955
  * @author hendrawd on 5/18/16
  */
-class FunSwipeRefreshLayout(context: Context, attrs: AttributeSet) : SwipeRefreshLayout(context, attrs) {
-
+class FunSwipeRefreshLayout @JvmOverloads constructor(
+        context: Context, attrs: AttributeSet? = null
+) : SwipeRefreshLayout(context, attrs) {
     init {
         setColorSchemeResources(android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light)
     }
-
     private var mRecyclerView: RecyclerView? = null
 
     fun setRecyclerView(recyclerView: RecyclerView) {
