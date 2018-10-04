@@ -9,7 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.roger.catloadinglibrary.CatLoadingView
 import ganteng.hendrawd.footballmatchschedule.R
-import ganteng.hendrawd.footballmatchschedule.util.Loading
+import ganteng.hendrawd.footballmatchschedule.common.util.Loading
 import ganteng.hendrawd.footballmatchschedule.view.activity.MatchListActivity.Companion.KEY_LEAGUE
 import ganteng.hendrawd.footballmatchschedule.view.model.LeagueModel
 import ganteng.hendrawd.footballmatchschedule.viewmodel.LeagueListViewModel

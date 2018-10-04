@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ganteng.hendrawd.footballmatchschedule.R
-import ganteng.hendrawd.footballmatchschedule.util.SingleLiveEvent
-import ganteng.hendrawd.footballmatchschedule.util.load
+import ganteng.hendrawd.footballmatchschedule.common.util.SingleLiveEvent
+import ganteng.hendrawd.footballmatchschedule.common.util.load
 import ganteng.hendrawd.footballmatchschedule.view.model.TeamModel
 import kotlinx.android.synthetic.main.item_list_team.view.*
 

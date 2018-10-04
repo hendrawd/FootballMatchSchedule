@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.support.design.widget.AppBarLayout
 import android.view.View
 import ganteng.hendrawd.footballmatchschedule.R
-import ganteng.hendrawd.footballmatchschedule.util.load
-import ganteng.hendrawd.footballmatchschedule.view.custom.HeaderView
+import ganteng.hendrawd.footballmatchschedule.common.util.load
+import ganteng.hendrawd.footballmatchschedule.common.customview.HeaderView
 import ganteng.hendrawd.footballmatchschedule.view.model.PlayerModel
 import kotlinx.android.synthetic.main.activity_player_detail.*
 import kotlinx.android.synthetic.main.layout_toolbar_header_view.view.*

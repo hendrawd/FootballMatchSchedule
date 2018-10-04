@@ -7,7 +7,7 @@ import com.google.gson.Gson
 import ganteng.hendrawd.footballmatchschedule.network.EndPoint
 import ganteng.hendrawd.footballmatchschedule.network.getDataAsString
 import ganteng.hendrawd.footballmatchschedule.network.model.GetTeamListResponse
-import ganteng.hendrawd.footballmatchschedule.util.toTeamModel
+import ganteng.hendrawd.footballmatchschedule.common.util.toTeamModel
 import ganteng.hendrawd.footballmatchschedule.view.model.TeamModel
 import org.jetbrains.anko.doAsync
 

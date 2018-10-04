@@ -131,7 +131,7 @@
             app:constraint_referenced_ids="ivTeam1Logo,ivTeam2Logo"
             />
 
-        <ganteng.hendrawd.footballmatchschedule.view.custom.ContinuedLineView
+        <ganteng.hendrawd.footballmatchschedule.common.customview.ContinuedLineView
             android:id="@+id/line"
             android:layout_width="0dp"
             android:layout_height="1dp"

@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package ganteng.hendrawd.footballmatchschedule.util
+package ganteng.hendrawd.footballmatchschedule.common.util
 
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.MutableLiveData

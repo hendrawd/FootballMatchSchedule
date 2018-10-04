@@ -15,7 +15,7 @@ import android.view.View
 import com.roger.catloadinglibrary.CatLoadingView
 import ganteng.hendrawd.footballmatchschedule.R
 import ganteng.hendrawd.footballmatchschedule.R.menu.menu_navigation_match
-import ganteng.hendrawd.footballmatchschedule.util.Loading
+import ganteng.hendrawd.footballmatchschedule.common.util.Loading
 import ganteng.hendrawd.footballmatchschedule.view.adapter.MatchAdapter
 import ganteng.hendrawd.footballmatchschedule.view.model.LeagueModel
 import ganteng.hendrawd.footballmatchschedule.viewmodel.MatchListViewModel

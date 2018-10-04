@@ -7,7 +7,7 @@ import com.google.gson.Gson
 import ganteng.hendrawd.footballmatchschedule.network.EndPoint
 import ganteng.hendrawd.footballmatchschedule.network.getDataAsString
 import ganteng.hendrawd.footballmatchschedule.network.model.GetAllLeaguesResponse
-import ganteng.hendrawd.footballmatchschedule.util.toLeagueModelList
+import ganteng.hendrawd.footballmatchschedule.common.util.toLeagueModelList
 import ganteng.hendrawd.footballmatchschedule.view.model.LeagueModel
 import kotlinx.coroutines.experimental.launch
 

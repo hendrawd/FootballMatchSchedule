@@ -1,4 +1,4 @@
-package ganteng.hendrawd.footballmatchschedule.util
+package ganteng.hendrawd.footballmatchschedule.common.util
 
 /**
  * @author hendrawd on 09/08/18

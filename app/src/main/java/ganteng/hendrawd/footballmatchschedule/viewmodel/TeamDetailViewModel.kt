@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteConstraintException
 import ganteng.hendrawd.footballmatchschedule.db.FavoriteTeam
 import ganteng.hendrawd.footballmatchschedule.db.MyDatabaseOpenHelper
 import ganteng.hendrawd.footballmatchschedule.db.database
-import ganteng.hendrawd.footballmatchschedule.util.toFavoriteTeam
+import ganteng.hendrawd.footballmatchschedule.common.util.toFavoriteTeam
 import ganteng.hendrawd.footballmatchschedule.view.model.TeamModel
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.delete

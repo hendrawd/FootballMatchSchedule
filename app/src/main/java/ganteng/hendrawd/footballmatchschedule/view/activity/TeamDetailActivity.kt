@@ -15,7 +15,7 @@ import android.view.MenuItem
 import android.view.ViewTreeObserver
 import ganteng.hendrawd.footballmatchschedule.R
 import ganteng.hendrawd.footballmatchschedule.db.FavoriteTeam
-import ganteng.hendrawd.footballmatchschedule.util.load
+import ganteng.hendrawd.footballmatchschedule.common.util.load
 import ganteng.hendrawd.footballmatchschedule.view.fragment.PlayerListFragment
 import ganteng.hendrawd.footballmatchschedule.view.fragment.TeamDescriptionFragment
 import ganteng.hendrawd.footballmatchschedule.viewmodel.TeamDetailViewModel

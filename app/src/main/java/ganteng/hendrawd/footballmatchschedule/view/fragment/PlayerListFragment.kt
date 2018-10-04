@@ -17,8 +17,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.roger.catloadinglibrary.CatLoadingView
-import ganteng.hendrawd.footballmatchschedule.util.Loading
-import ganteng.hendrawd.footballmatchschedule.util.getActivity
+import ganteng.hendrawd.footballmatchschedule.common.util.Loading
+import ganteng.hendrawd.footballmatchschedule.common.util.getActivity
 import ganteng.hendrawd.footballmatchschedule.view.activity.PlayerDetailActivity
 import ganteng.hendrawd.footballmatchschedule.view.adapter.PlayerAdapter
 import ganteng.hendrawd.footballmatchschedule.viewmodel.PlayerListViewModel

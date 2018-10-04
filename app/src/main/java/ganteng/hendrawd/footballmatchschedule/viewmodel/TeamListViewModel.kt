@@ -11,8 +11,8 @@ import ganteng.hendrawd.footballmatchschedule.db.database
 import ganteng.hendrawd.footballmatchschedule.network.EndPoint
 import ganteng.hendrawd.footballmatchschedule.network.getDataAsString
 import ganteng.hendrawd.footballmatchschedule.network.model.GetTeamListResponse
-import ganteng.hendrawd.footballmatchschedule.util.favoriteTeamToTeamModelList
-import ganteng.hendrawd.footballmatchschedule.util.toTeamModelList
+import ganteng.hendrawd.footballmatchschedule.common.util.favoriteTeamToTeamModelList
+import ganteng.hendrawd.footballmatchschedule.common.util.toTeamModelList
 import ganteng.hendrawd.footballmatchschedule.view.model.LeagueModel
 import ganteng.hendrawd.footballmatchschedule.view.model.TeamModel
 import kotlinx.coroutines.experimental.launch

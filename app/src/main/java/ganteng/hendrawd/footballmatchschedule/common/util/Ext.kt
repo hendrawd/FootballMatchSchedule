@@ -1,4 +1,4 @@
-package ganteng.hendrawd.footballmatchschedule.util
+package ganteng.hendrawd.footballmatchschedule.common.util
 
 import android.app.Activity
 import android.content.Context

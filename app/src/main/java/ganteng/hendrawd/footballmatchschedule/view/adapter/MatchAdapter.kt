@@ -1,12 +1,11 @@
 package ganteng.hendrawd.footballmatchschedule.view.adapter
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ganteng.hendrawd.footballmatchschedule.R
-import ganteng.hendrawd.footballmatchschedule.util.SingleLiveEvent
+import ganteng.hendrawd.footballmatchschedule.common.util.SingleLiveEvent
 import ganteng.hendrawd.footballmatchschedule.view.model.MatchModel
 import kotlinx.android.synthetic.main.item_list_match.view.*
 

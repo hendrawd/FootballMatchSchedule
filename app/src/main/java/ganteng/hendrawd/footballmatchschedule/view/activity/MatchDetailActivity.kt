@@ -11,8 +11,8 @@ import android.view.MenuItem
 import ganteng.hendrawd.footballmatchschedule.R
 import ganteng.hendrawd.footballmatchschedule.R.menu.activity_match_detail_menu
 import ganteng.hendrawd.footballmatchschedule.db.FavoriteMatch
-import ganteng.hendrawd.footballmatchschedule.util.Util
-import ganteng.hendrawd.footballmatchschedule.util.load
+import ganteng.hendrawd.footballmatchschedule.common.util.Util
+import ganteng.hendrawd.footballmatchschedule.common.util.load
 import ganteng.hendrawd.footballmatchschedule.view.model.MatchModel
 import ganteng.hendrawd.footballmatchschedule.viewmodel.MatchDetailViewModel
 import ganteng.hendrawd.footballmatchschedule.viewmodel.TeamViewModel
